@@ -3,8 +3,8 @@ app.post('/getName',function(req,res) {
 
 	 res.setHeader('Content-Type', 'application/json');
                     res.send(JSON.stringify({
-                        "speech" : "Success called Node js  ? ",
-                        "displayText" : "Success called Node js ? "
+                        "fulfillmentText" : "Success in calling Node js"
+        
                     }));
  
 });
