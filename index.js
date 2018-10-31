@@ -1,5 +1,5 @@
 var app = require('express').createServer();
-app.get('/getName',function(req,res) {
+app.post('/getName',function(req,res) {
 	 if(req.body.result.parameters['Name']) {
 	res.send("Hello World" + "Name");
 	 }else{
