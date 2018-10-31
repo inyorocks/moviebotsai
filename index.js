@@ -1,10 +1,12 @@
 var app = require('express').createServer();
-app.get('/getName',function(req,res) {
-	 if(req.query.param1 != null) {
-	res.send("Hello World " + req.query.param1);
-	 }else{
-	res.send("Hello World");	 
-	 } 
+app.post('/getName',function(req,res) {
+ if(res.body.result.parameters['name']) {
+	 response.setHeader('Content-Type', 'application/json');
+                    response.send(JSON.stringify({
+                        "speech" : "Success called Node js  ? ",
+                        "displayText" : "Success called Node js ? "
+                    }));
+ }
 });
 
 app.listen(process.env.PORT || 3000,function(){
