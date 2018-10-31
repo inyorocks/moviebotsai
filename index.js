@@ -1,7 +1,7 @@
 var app = require('express').createServer();
 app.post('/getName',function(req,res) {
 
-var userName = req.body.result.parameters['name'];
+var userName = req.body.queryResult.parameters['name'];
 	    if(userName) {
 	 res.setHeader('Content-Type', 'application/json');
                     res.send(JSON.stringify({
