@@ -1,6 +1,6 @@
 var app = require('express').createServer();
 app.post('/getName',function(req,res) {
-	var test = req.firsName.queryResult.parameters['name']
+	const data = req.body;
 	 res.setHeader('Content-Type', 'application/json');
                     res.send(JSON.stringify({
                         "fulfillmentText" : "Success in calling Node js"   
