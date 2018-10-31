@@ -1,10 +1,10 @@
 var app = require('express').createServer();
 app.use(bodyParser.json());
 app.post('/getName',function(req,res) {
-	const data = req.body;
+	var val = req.queryResult.parameters['name']
 	 res.setHeader('Content-Type', 'application/json');
                     res.send(JSON.stringify({
-                        "fulfillmentText" : req.queryResult.parameters['name']
+                        "fulfillmentText" : val
                     }));
  }); 
 app.listen(process.env.PORT || 3000,function(){
