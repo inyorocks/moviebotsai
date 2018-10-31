@@ -1,4 +1,5 @@
 var app = require('express').createServer();
+app.use(bodyParser.json());
 app.post('/getName',function(req,res) {
 	const data = req.body;
 	 res.setHeader('Content-Type', 'application/json');
