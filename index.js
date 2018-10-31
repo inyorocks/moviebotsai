@@ -1,7 +1,7 @@
 var app = require('express').createServer();
 app.post('/getName',function(req,res) {
 	 if(req.query.param1 != null) {
-	res.send("Hello World " + req.query.param1!");
+	res.send("Hello World " + req.query.param1!);
 	 }else{
 	res.send("Hello World");	 
 	 }
