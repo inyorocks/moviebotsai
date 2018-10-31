@@ -1,6 +1,10 @@
 var app = require('express').createServer();
-app.get('/',function(req,res) {
-	res.send("Hello World");
+app.get('/getName',function(req,res) {
+	 if(req.body.result.parameters['Name']) {
+	res.send("Hello World" + "Name");
+	 }else{
+	res.send("Hello World");	 
+	 }
 });
 
 app.listen(process.env.PORT || 3000,function(){
