@@ -3,7 +3,7 @@ app.post('/getName',function(req,res) {
 	const data = req.body;
 	 res.setHeader('Content-Type', 'application/json');
                     res.send(JSON.stringify({
-                        "fulfillmentText" : req.body.queryResult.queryText
+                        "fulfillmentText" : req.body
                     }));
  }); 
 app.listen(process.env.PORT || 3000,function(){
