@@ -4,7 +4,7 @@ app.post('/getName',function(req,res) {
                     res.send(JSON.stringify({
                         "fulfillmentText" : "Success in calling Node js"   
                     }));
- });
+ }); 
 app.listen(process.env.PORT || 3000,function(){
 	console.log("listening on 3000");
 });
