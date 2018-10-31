@@ -1,8 +1,10 @@
 var app = require('express').createServer();
 app.post('/getName',function(req,res) {
 
-	  
-	 res.setHeader('Content-Type', 'application/json');
+	const parameters = req.body.queryResult.parameters;
+        var companyName = parameters['name'];  
+	
+	res.setHeader('Content-Type', 'application/json');
                     res.send(JSON.stringify({
                         "fulfillmentText" : "Success in calling Node js " + "Good job"
 			    
