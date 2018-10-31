@@ -1,11 +1,11 @@
 var app = require('express').createServer();
 app.post('/getName',function(req,res) {
 
-	    if(request.body.result.parameters['name']) {
+var userName = request.body.result.parameters['name'];
+	    if(userName) {
 	 res.setHeader('Content-Type', 'application/json');
                     res.send(JSON.stringify({
-                        "fulfillmentText" : "Success in calling Node js. Good job" + request.body.result.parameters['name']
-        
+                        "fulfillmentText" : "Success in calling Node js. Good job" + userName        
                     }));
 			}else{
 						 res.setHeader('Content-Type', 'application/json');
