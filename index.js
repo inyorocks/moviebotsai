@@ -1,8 +1,8 @@
 var app = require('express').createServer();
 app.post('/getName',function(req,res) {
  if(res.body.result.parameters['name']) {
-	 response.setHeader('Content-Type', 'application/json');
-                    response.send(JSON.stringify({
+	 res.setHeader('Content-Type', 'application/json');
+                    res.send(JSON.stringify({
                         "speech" : "Success called Node js  ? ",
                         "displayText" : "Success called Node js ? "
                     }));
