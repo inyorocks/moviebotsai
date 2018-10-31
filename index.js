@@ -5,7 +5,8 @@ var userName = req.body.queryResult.parameters['name'];
 	  
 	 res.setHeader('Content-Type', 'application/json');
                     res.send(JSON.stringify({
-                        "fulfillmentText" : "Success in calling Node js. Good job" + userName        
+                        "fulfillmentText" : "Success in calling Node js. Good job"
+			    
                     }));
 	
 });
