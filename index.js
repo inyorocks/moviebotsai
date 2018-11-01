@@ -8,6 +8,8 @@ console.log("Value of c");
 var server = http.createServer(app);
 console.log("Value of 1");
 // configure the app to use bodyParser()
+var bodyParser = require('body-parser');
+console.log("Value of 1.1");
 app.use(bodyParser.json());
 console.log("Value of 2");
 app.post('/getName',function(req,res) {
