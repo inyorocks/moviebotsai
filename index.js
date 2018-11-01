@@ -11,8 +11,7 @@ app.post('/getName', function(request, response) {
             var val = request.body.queryResult.parameters['GIVEN_NAME'];
             var req = require('superagent');
             // Include the request library for Node.js   
-          
-            //  Basic Authentication credentials   
+           //  Basic Authentication credentials   
             var username = "sai.ramesh@ehp.qld.gov.au"; 
             var password = "Hanuman.01";
             var authenticationHeader = "Basic " + new Buffer(username + ":" + password).toString("base64");
