@@ -1,5 +1,7 @@
 var express = require('express');
 var http = require('http');
+var https = require('https');
+
 var app = express();
 var server = http.createServer(app);
 // configure the app to use bodyParser()
@@ -9,12 +11,12 @@ app.post('/getName', function(request, response) {
             var val = request.body.queryResult.parameters['GIVEN_NAME'];
             
             // Include the request library for Node.js   
-            var req = require('request');
+          
             //  Basic Authentication credentials   
             var username = "sai.ramesh@ehp.qld.gov.au"; 
             var password = "Hanuman.01";
             var authenticationHeader = "Basic " + new Buffer(username + ":" + password).toString("base64");
-            req(   
+            https.request(   
             {
             url : "https://ehpdev2.appiancloud.com/suite/webapi/permitSearch?permitRef_txt=EA0003548",
             headers : { "Authorization" : authenticationHeader }  
