@@ -1,5 +1,7 @@
 var express = require('express');
 var http = require('http');
+var https = require('https');
+
 var app = express();
 var server = http.createServer(app);
 // configure the app to use bodyParser()
@@ -8,7 +10,7 @@ app.use(bodyParser.json());
 app.post('/getName', function(request, response) {
             var val = request.body.queryResult.parameters['GIVEN_NAME'];
             console.log("Value of 3");
-           var req = http.get('https://ehpdev2.appiancloud.com/suite/webapi/permitSearch?permitRef_txt=EA0003548').auth('sai.ramesh@ehp.qld.gov.au', 'Hanuman.01', false);
+           var req = https.get('https://ehpdev2.appiancloud.com/suite/webapi/permitSearch?permitRef_txt=EA0003548').auth('sai.ramesh@ehp.qld.gov.au', 'Hanuman.01', false);
             req.send("{}");
             console.log("Value of 4");
             req.end(function(res) {
