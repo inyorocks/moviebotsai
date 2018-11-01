@@ -17,7 +17,7 @@ app.post('/getName',function(req,res) {
 	console.log("Value of 3");
 	 res.setHeader('Content-Type', 'application/json');
                     res.send(JSON.stringify({
-                        "fulfillmentText" : val 
+                        "fulfillmentText" : "Thansk for reaching out" + val
                     }));
 	console.log("Value of 4");
  }); 
