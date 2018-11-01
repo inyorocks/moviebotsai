@@ -21,7 +21,6 @@ app.post('/getName',function(req,res) {
                     }));
 	console.log("Value of 4");
  }); 
-
 app.listen(process.env.PORT || 3000,function(){
 	console.log("listening on 3000");
 });
