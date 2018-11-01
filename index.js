@@ -8,34 +8,28 @@ app.use(bodyParser.json());
 app.post('/getName',function(request,response) {
 	var val = request.body.queryResult.parameters['GIVEN_NAME'];
 	console.log("Value of 3");
-	var request = require('request');
+	var req = unirest("GET", "https://ehpdev2.appiancloud.com/suite/webapi/permitSearch?permitRef_txt=EA0003548");
+            req.query({
+                "page": "1",
+                "language": "en-US",
+                "username": "sai.ramesh@ehp.qld.gov.au",
+		 "password" : "Hanuman.01"   
+            });
+            req.send("{}");
 	console.log("Value of 4");
-	var url = 'https://ehpdev2.appiancloud.com/suite/webapi/permitSearch?permitRef_txt=EA0003548';
-	var user = 'sai.ramesh@ehp.qld.gov.au';
-	var pass = 'Hanuman.01';
-	console.log("Value of 5");
-	// Save these for future requests
-	var userId;
-	var authToken;
-	console.log("Value of 6");
-	// Use POST instead of GET
-	request.post(
-	  {
-	    uri: url,
-	    // I'm using form because it matches the urlEncoding behaviour expected by `restivus`
-	    form: { username: user, password: pass }
-	  },
-		
-	  function(err, httpResponse, body) {
-	    if (err) {
-	      return console.error('post failed:', err);
-	  }}
-        )
+            req.end(function(res) {
+                if(res.error) {
+                   response.setHeader('Content-Type', 'application/json');
+                    response.send(JSON.stringify({
+                        "fulfillmentText" : "Error Mate"
+                    }));
+			)else{
 	
 	response.setHeader('Content-Type', 'application/json');
                     response.send(JSON.stringify({
                         "fulfillmentText" : "Thanks for reaching out " + val
                     }));
+			}
 	console.log("Value of 4");
  }); 
 app.listen(process.env.PORT || 3000,function(){
