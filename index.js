@@ -10,10 +10,17 @@ app.use(bodyParser.json());
 app.post('/getName', function(request, response) {
             var val = request.body.queryResult.parameters['GIVEN_NAME'];
             console.log("Value of 3");
-           var req = https.get('https://ehpdev2.appiancloud.com/suite/webapi/permitSearch?permitRef_txt=EA0003548').auth('sai.ramesh@ehp.qld.gov.au', 'Hanuman.01', false);
-            req.send("{}");
-            console.log("Value of 4");
-            req.end(function(res) {
+            var https = require('https');
+            var username = 'fooUsername'
+            var password = 'fooPassword'
+            var options = {
+              url: 'https://ehpdev2.appiancloud.com/suite/webapi/permitSearch?permitRef_txt=EA0003548',
+              auth: {
+                user: 'sai.ramesh@ehp.qld.gov.au',
+                password: 'Hanuman.01
+              }
+            }
+            var req = https.request(options, function(res) {
                 if (res.error) {
                     response.setHeader('Content-Type', 'application/json');
                     response.send(JSON.stringify({
