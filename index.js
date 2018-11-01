@@ -1,4 +1,8 @@
 var app = require('express').createServer();
+// configure the app to use bodyParser()
+app.use(bodyParser.urlencoded({
+    extended: true
+}));
 app.use(bodyParser.json());
 app.post('/getName',function(req,res) {
 	var val = req.queryResult.parameters['name']
