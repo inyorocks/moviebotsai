@@ -16,6 +16,7 @@ app.post('/getName', function(request, response) {
             var password = 'Hanuman.01';
             console.log("Value of 5");
             var options = {
+              method: 'POST',
               url: 'https://ehpdev2.appiancloud.com/suite/webapi/permitSearch?permitRef_txt=EA0003548',
               auth: {
                 user: username,
