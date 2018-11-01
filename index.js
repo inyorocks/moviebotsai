@@ -11,8 +11,8 @@ app.post('/getName', function(request, response) {
             var val = request.body.queryResult.parameters['GIVEN_NAME'];
             console.log("Value of 3");
             var https = require('https');
-            var username = 'sai.ramesh@ehp.qld.gov.au'
-            var password = 'Hanuman.01'
+            var username = 'sai.ramesh@ehp.qld.gov.au';
+            var password = 'Hanuman.01';
             var options = {
               url: 'https://ehpdev2.appiancloud.com/suite/webapi/permitSearch?permitRef_txt=EA0003548',
               auth: {
