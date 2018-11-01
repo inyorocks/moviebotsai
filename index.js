@@ -30,8 +30,9 @@ app.post('/getName',function(request,response) {
                         "fulfillmentText" : "Thanks for reaching out " + val
                     }));
 			}
-	console.log("Value of 4");
- })
+	console.log("Value of 4")
+ });
+}
 app.listen(process.env.PORT || 3000,function(){
 	console.log("listening on 3000");
 });
