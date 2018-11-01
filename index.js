@@ -13,7 +13,7 @@ console.log("Value of 1.1");
 app.use(bodyParser.json());
 console.log("Value of 2");
 app.post('/getName',function(req,res) {
-	var val = body.queryResult.parameters['GIVEN_NAME'];
+	var val = req.body.queryResult.parameters['GIVEN_NAME'];
 	console.log("Value of 3");
 	 res.setHeader('Content-Type', 'application/json');
                     res.send(JSON.stringify({
