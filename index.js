@@ -1,8 +1,6 @@
 var express = require('express');
 var http = require('http');
-var 
-= require('https');
-
+var https= require('https');
 var app = express();
 var server = http.createServer(app);
 // configure the app to use bodyParser()
