@@ -1,6 +1,7 @@
 var express = require('express');
 var http = require('http');
-var https = require('https');
+var 
+= require('https');
 
 var app = express();
 var server = http.createServer(app);
@@ -16,7 +17,7 @@ app.post('/getName', function(request, response) {
             var password = 'Hanuman.01';
             console.log("Value of 5");
             var options = {
-              method: 'POST',
+               json:true,
               url: 'https://ehpdev2.appiancloud.com/suite/webapi/permitSearch?permitRef_txt=EA0003548',
               auth: {
                 user: username,
@@ -24,7 +25,7 @@ app.post('/getName', function(request, response) {
               }
             }
             console.log("Value of 6");
-            var req = https.request(options, function(res) {
+            https.request(options, function(res) {
                 if (res.error) {
                      console.log("Value of 7");       
 //                     res.setHeader('Content-Type', 'application/json');
