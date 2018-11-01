@@ -16,12 +16,7 @@ app.post('/getName', function(request, response)
                 "username": "",
                 "password": ""
             });
-            req.send("{}");
-            console.log("Value of 4");
-            req.end(function(res) {
-               
-
-            });
+            
         }
         app.listen(process.env.PORT || 3000, function() {
             console.log("listening on 3000");
