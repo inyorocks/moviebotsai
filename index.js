@@ -1,5 +1,11 @@
 console.log("Value of 0");
-var app = require('express').createServer();
+var express = require('express');
+console.log("Value of a");
+var http = require('http');
+console.log("Value of b");
+var app = express();
+console.log("Value of c");
+var server = http.createServer(app);
 console.log("Value of 1");
 // configure the app to use bodyParser()
 app.use(bodyParser.json());
