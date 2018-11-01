@@ -25,16 +25,17 @@ app.post('/getName', function(request, response) {
             console.log("Value of 6");
             var req = https.request(options, function(res) {
                 if (res.error) {
-                    response.setHeader('Content-Type', 'application/json');
-                    response.send(JSON.stringify({
-                        "fulfillmentText": "Error Mate"
-                    }));
+                     console.log("Value of 7");       
+//                     res.setHeader('Content-Type', 'application/json');
+//                     res.send(JSON.stringify({
+//                         "fulfillmentText": "Error Mate"
+//                     }));
                 } else {
-
-                    response.setHeader('Content-Type', 'application/json');
-                    response.send(JSON.stringify({
-                        "fulfillmentText": "Thanks for reaching out " + val
-                    }));
+            console.log("Value of 7");      
+//                     res.setHeader('Content-Type', 'application/json');
+//                  .send(JSON.stringify({
+//                         "fulfillmentText": "Thanks for reaching out " + val
+//                     }));
                 }
             res.end();
 
