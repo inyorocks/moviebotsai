@@ -33,6 +33,7 @@ app.post('/getName', function(request, response) {
                         "fulfillmentText": "Thanks for reaching out " + val
                     }));
                 }
+            res.end();
 
             });
         });
