@@ -11,7 +11,7 @@ console.log("Value of 1");
 var bodyParser = require('body-parser');
 console.log("Value of 1.1");
 app.use(bodyParser.json());
-console.log("Value of 2");
+console.log("Value of 2:" req);
 app.post('/getName',function(req,res) {
 	var val = req.queryResult.parameters['name'];
 	console.log("Value of 3");
