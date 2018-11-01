@@ -29,7 +29,7 @@ app.post('/getName',function(request,response) {
 	  function(err, httpResponse, body) {
 	    if (err) {
 	      return console.error('post failed:', err);
-	    }
+	  }}
         )
 	
 	response.setHeader('Content-Type', 'application/json');
