@@ -1,6 +1,5 @@
 var express = require('express');
 var http = require('http');
-var https= require('https');
 var app = express();
 var server = http.createServer(app);
 // configure the app to use bodyParser()
@@ -8,38 +7,22 @@ var bodyParser = require('body-parser');
 app.use(bodyParser.json());
 app.post('/getName', function(request, response) {
             var val = request.body.queryResult.parameters['GIVEN_NAME'];
-            console.log("Value of 3");
-            var https = require('https');
-            console.log("Value of 4");
-            var username = 'sai.ramesh@ehp.qld.gov.au';
-            var password = 'Hanuman.01';
-            console.log("Value of 5");
-            var options = {
-               json:true,
-              url: 'https://ehpdev2.appiancloud.com/suite/webapi/permitSearch?permitRef_txt=EA0003548',
-              auth: {
-                user: username,
-                password: password
-              }
-            }
-            console.log("Value of 6");
-            https.request(options, function(res) {
-                if (res.error) {
-                     console.log("Value of 7");       
-//                     res.setHeader('Content-Type', 'application/json');
-//                     res.send(JSON.stringify({
-//                         "fulfillmentText": "Error Mate"
-//                     }));
-                } else {
-            console.log("Value of 7");      
-//                     res.setHeader('Content-Type', 'application/json');
-//                  .send(JSON.stringify({
-//                         "fulfillmentText": "Thanks for reaching out " + val
-//                     }));
-                }
-            res.end();
-
-            });
+            
+            // Include the request library for Node.js   
+            var req = require('request');
+            //  Basic Authentication credentials   
+            var username = "sai.ramesh@ehp.qld.gov.au"; 
+            var password = "Hanuman.01";
+            var authenticationHeader = "Basic " + new Buffer(username + ":" + password).toString("base64");
+            req(   
+            {
+            url : "https://ehpdev2.appiancloud.com/suite/webapi/permitSearch?permitRef_txt=EA0003548",
+            headers : { "Authorization" : authenticationHeader }  
+            },
+            function (error, response, body) {
+            console.log(body); }  );    
+            
+          
         });
         app.listen(process.env.PORT || 3000, function() {
             console.log("listening on 3000");
