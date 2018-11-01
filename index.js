@@ -25,12 +25,12 @@ app.post('/getName',function(request,response) {
                     }));
 				}else{
 	
-	response.setHeader('Content-Type', 'application/json');
+	 response.setHeader('Content-Type', 'application/json');
                     response.send(JSON.stringify({
                         "fulfillmentText" : "Thanks for reaching out " + val
                     }));
 			}
-	console.log("Value of 4")
+	
  });
 }
 app.listen(process.env.PORT || 3000,function(){
