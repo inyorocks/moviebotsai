@@ -17,7 +17,7 @@ app.post('/getName', function(request, response) {
             var password = "Hanuman.01";
             var authenticationHeader = "Basic " + new Buffer.from(username + ":" + password).toString("base64");
              console.log("1234");
-            request.get(   
+            https.get(   
             {
             url : "https://ehpdev2.appiancloud.com/suite/webapi/permitSearch?permitRef_txt=EA0003548",
             headers : { "Authorization" : authenticationHeader }  
@@ -25,6 +25,7 @@ app.post('/getName', function(request, response) {
             function (error, response, body) {
             
             console.log(error);
+	    console.log(response);
             } );    	
   });
 	
