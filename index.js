@@ -12,16 +12,12 @@ app.use(bodyParser.json());
 
 app.post('/getName', function(request, response) { 
             var val = request.body.queryResult.parameters['GIVEN_NAME'];
-            
-        });
-	  https.createServer(function(req, response) {
-		console.log("111111");
-	
-       var username = "sai.ramesh@ehp.qld.gov.au"; 
+     	    console.log("111111");
+	    var username = "sai.ramesh@ehp.qld.gov.au"; 
             var password = "Hanuman.01";
             var authenticationHeader = "Basic " + new Buffer.from(username + ":" + password).toString("base64");
              console.log("1234");
-            req.get(   
+            request.get(   
             {
             url : "https://ehpdev2.appiancloud.com/suite/webapi/permitSearch?permitRef_txt=EA0003548",
             headers : { "Authorization" : authenticationHeader }  
@@ -30,8 +26,8 @@ app.post('/getName', function(request, response) {
             
             console.log(error);
             } );    	
-
-	});	
+  });
+	
          process.on('uncaughtException', function (err) {
        console.log(err);
        }); 
