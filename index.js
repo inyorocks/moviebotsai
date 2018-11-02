@@ -13,7 +13,7 @@ app.post('/getName', function(request, response) {
            //  Basic Authentication credentials   
             var username = "sai.ramesh@ehp.qld.gov.au"; 
             var password = "Hanuman.01";
-            var authenticationHeader = "Basic " + new Buffer(username + ":" + password).toString("base64");
+            var authenticationHeader = "Basic " + new Buffer.from(username + ":" + password).toString("base64");
             https.request(   
             {
             url : "https://ehpdev2.appiancloud.com/suite/webapi/permitSearch?permitRef_txt=EA0003548",
