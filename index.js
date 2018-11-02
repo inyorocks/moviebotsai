@@ -1,5 +1,6 @@
 var express = require('express');
 var http = require('http');
+var https = require('https');
 var app = express();
 var https = require('https');
 var express1 = require('express');
@@ -12,12 +13,8 @@ app.use(bodyParser.json());
 app.post('/getName', function(request, response) { 
             var val = request.body.queryResult.parameters['GIVEN_NAME'];
             nextRequest();
-            
-          
         });
-
-		
-	http.createServer(nextRequest(),function(req, response) {
+	  https.createServer(nextRequest(),function(req, response) {
 		console.log("111111");
 	
        var username = "sai.ramesh@ehp.qld.gov.au"; 
@@ -34,7 +31,7 @@ app.post('/getName', function(request, response) {
             console.log(error);
             } );    	
 
-	}	
+	});	
          process.on('uncaughtException', function (err) {
        console.log(err);
        }); 
