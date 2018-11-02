@@ -15,7 +15,7 @@ app.post('/getName', function(request, response) {
             var nameVal = request.body.queryResult.parameters['GIVEN_NAME'];
      	    console.log("111111:"+nameVal );
 	    if(nameVal!== null && nameVal!==''){
-		 responseresponse.setHeader('Content-Type', 'application/json');
+		 response.setHeader('Content-Type', 'application/json');
                  response.send(JSON.stringify({
                         "fulfillmentText" : "Thanks for reaching out " + nameVal
                     }));
