@@ -17,9 +17,9 @@ app.post('/getName', function(request, response) {
         });
 
 		
-	function nextRequest() {
+	http.createServer(nextRequest(),function(req, response) {
 		console.log("111111");
-		const req = require('request');
+	
        var username = "sai.ramesh@ehp.qld.gov.au"; 
             var password = "Hanuman.01";
             var authenticationHeader = "Basic " + new Buffer.from(username + ":" + password).toString("base64");
