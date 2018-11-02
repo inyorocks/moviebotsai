@@ -12,8 +12,15 @@ var bodyParser = require('body-parser');
 app.use(bodyParser.json());
 var loginUrl="";
 app.post('/getName', function(request, response) { 
-            var val = request.body.queryResult.parameters['GIVEN_NAME'];
-     	    console.log("111111:"+val );
+            var nameVal = request.body.queryResult.parameters['GIVEN_NAME'];
+     	    console.log("111111:"+nameVal );
+	    if(nameVal!== null && nameVal!==''){
+		 responseresponse.setHeader('Content-Type', 'application/json');
+                 response.send(JSON.stringify({
+                        "fulfillmentText" : "Thanks for reaching out " + nameVal
+                    }));
+		 
+	    }	 
 	     var perm = request.body.queryResult.parameters['given-perm'];
      	    console.log("2222:"+perm );
 	 if(perm!== null && perm!==''){
