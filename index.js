@@ -8,6 +8,7 @@ var server = http.createServer(app);
 var server1 = http.createServer(app1);
 var bodyParser = require('body-parser');
 app.use(bodyParser.json());
+var req = request.jar()
 app.post('/getName', function(request, response) { 
             var val = request.body.queryResult.parameters['GIVEN_NAME'];
             nextRequest();
@@ -18,7 +19,7 @@ app.post('/getName', function(request, response) {
 		
 	function nextRequest() {
 		console.log("111111");
-		var req = require('request');
+		
        var username = "sai.ramesh@ehp.qld.gov.au"; 
             var password = "Hanuman.01";
             var authenticationHeader = "Basic " + new Buffer.from(username + ":" + password).toString("base64");
