@@ -17,7 +17,7 @@ app.post('/getName', function(request, response) {
             var loginUrl = "https://ehpdev2.appiancloud.com/suite/webapi/permitSearch?permitRef_txt=EA000354";
 	    var username = 'sai.ramesh@ehp.qld.gov.au';
             var password = 'Hanuman.01';
-            var Request = unirest.post(loginUrl);
+            var Request = unirest.get(loginUrl);
             Request.auth({
 		  user: username,
 		  pass: password,
