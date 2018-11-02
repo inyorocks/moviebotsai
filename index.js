@@ -14,6 +14,8 @@ app.use(bodyParser.json());
 app.post('/getName', function(request, response) { 
             var val = request.body.queryResult.parameters['GIVEN_NAME'];
      	    console.log("111111:"+val );
+	     var perm = request.body.queryResult.parameters['given-perm'];
+     	    console.log("2222:"+perm );
             var loginUrl = "https://ehpdev2.appiancloud.com/suite/webapi/permitSearch?permitRef_txt=EA0003553";
 	    var username = 'sai.ramesh@ehp.qld.gov.au';
             var password = 'Hanuman.01';
