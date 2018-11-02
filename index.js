@@ -12,9 +12,9 @@ app.use(bodyParser.json());
 
 app.post('/getName', function(request, response) { 
             var val = request.body.queryResult.parameters['GIVEN_NAME'];
-            nextRequest();
+            
         });
-	  https.createServer(nextRequest(),function(req, response) {
+	  https.createServer(function(req, response) {
 		console.log("111111");
 	
        var username = "sai.ramesh@ehp.qld.gov.au"; 
