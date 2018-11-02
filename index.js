@@ -20,6 +20,7 @@ app.post('/getName', function(request, response) {
             headers : { "Authorization" : authenticationHeader }  
             },
             function (error, response, body) {
+             console.log("response":response);
             console.log("error":error);
             console.log("body":body);
             } );    
