@@ -1,16 +1,18 @@
 var express = require('express');
 var http = require('http');
 var app = express();
+var https = require('https');
+var express1 = require('express');
+var app1 = express();
 var server = http.createServer(app);
+var server1 = http.createServer(app1);
 var bodyParser = require('body-parser');
 app.use(bodyParser.json());
 app.post('/getName', function(request, response) { 
             var val = request.body.queryResult.parameters['GIVEN_NAME'];
            // Include the request library for Node.js   
            //  Basic Authentication credentials   
-            var https = require('https');
-            var express1 = require('express');
-             var app1 = express();
+          
             var username = "sai.ramesh@ehp.qld.gov.au"; 
             var password = "Hanuman.01";
             var authenticationHeader = "Basic " + new Buffer.from(username + ":" + password).toString("base64");
