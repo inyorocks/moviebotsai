@@ -27,6 +27,9 @@ app.post('/getName', function(request, response) {
             
           
         });
+         process.on('uncaughtException', function (err) {
+       console.log(err);
+       }); 
         app.listen(process.env.PORT || 3000, function() {
             console.log("listening on 3000");
         });
