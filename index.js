@@ -7,7 +7,7 @@ var server = http.createServer(app);
 // configure the app to use bodyParser()
 var bodyParser = require('body-parser');
 app.use(bodyParser.json());
-app.post('/getName', function(request, response) {
+app.post('/getName', function(request, response) { 
             var val = request.body.queryResult.parameters['GIVEN_NAME'];
            // Include the request library for Node.js   
            //  Basic Authentication credentials   
