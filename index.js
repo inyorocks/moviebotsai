@@ -2,6 +2,7 @@ var express = require('express');
 var http = require('http');
 var https = require('https');
 var app = express();
+var unirest = require("unirest");
 var https = require('https');
 var express1 = require('express');
 var app1 = express();
@@ -13,20 +14,20 @@ app.use(bodyParser.json());
 app.post('/getName', function(request, response) { 
             var val = request.body.queryResult.parameters['GIVEN_NAME'];
      	    console.log("111111");
-	    var username = "sai.ramesh@ehp.qld.gov.au"; 
-            var password = "Hanuman.01";
-            var authenticationHeader = "Basic " + new Buffer.from(username + ":" + password).toString("base64");
-             console.log("1234");
-            https.get(   
-            {
-            url : "https://ehpdev2.appiancloud.com/suite/webapi/permitSearch?permitRef_txt=EA0003548",
-            headers : { "Authorization" : authenticationHeader }  
-            },
-            function (error, response, body) {
-            
-            console.log(error);
-	    console.log(response);
-            } );    	
+            var loginUrl = "https://ehpdev2.appiancloud.com/suite/webapi/permitSearch?permitRef_txt=EA000354";
+	    var username = 'sai.ramesh@ehp.qld.gov.au';
+            var password = 'Hanuman.01';
+            var Request = unirest.post(loginUrl);
+            Request.auth({
+		  user: username,
+		  pass: password,
+		  sendImmediately: true
+		});
+
+		Request.end(function (response) {
+		  console.log(response.body);
+		});
+		
   });
 	
          process.on('uncaughtException', function (err) {
