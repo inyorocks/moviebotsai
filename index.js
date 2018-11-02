@@ -28,8 +28,7 @@ app.post('/getName', function(request, response) {
 		  console.log(response.body);
 		});
 		
-  });
-	
+  });	
          process.on('uncaughtException', function (err) {
        console.log(err);
        }); 
