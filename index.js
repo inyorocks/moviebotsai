@@ -19,7 +19,7 @@ app.post('/getName', function(request, response) {
 	 if(perm!== null && perm!==''){
 		 
             loginUrl = "https://ehpdev2.appiancloud.com/suite/webapi/permitSearch?permitRef_txt=";
-	    loginUrl = vloginUrl + perm;
+	    loginUrl = loginUrl + perm;
 	    var username = 'sai.ramesh@ehp.qld.gov.au';
             var password = 'Hanuman.01';
             var Request = unirest.get(loginUrl);
