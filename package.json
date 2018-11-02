@@ -2,5 +2,8 @@
 	"name": "moviebotsai",
 	"version": "0.0.1",
 	"dependencies": {
-		"express":"~3.11.0"}
+	
+		"express":"~3.11.0",
+		 "unirest": "^0.5.1"
+	}
 }
