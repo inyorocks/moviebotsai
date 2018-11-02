@@ -25,7 +25,6 @@ app.post('/getName', function(request, response) {
 		  pass: password,
 		  sendImmediately: true
 		});
-
 		Request.end(function (response) {
 		  console.log(response.body);
 		});
