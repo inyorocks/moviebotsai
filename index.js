@@ -42,7 +42,7 @@ app.post('/getName', function(request, response) {
 			var result = res.body.results;
                    
 		 response.send(JSON.stringify({
-                        "fulfillmentText" : "The premit application ref is "+ result.length
+                        "fulfillmentText" : "The premit application ref is "+ res.body.length
                   }));
 			
 		});
