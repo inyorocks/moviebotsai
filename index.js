@@ -39,9 +39,9 @@ app.post('/getName', function(request, response) {
 		  
 			 const profile = JSON.parse(res.body);
 			console.log(profile);
-			let result = res.body.results;
-                    let output = '';
-                    for(let i = 0; i<result.length;i++) {
+			var result = res.body.results;
+                    var output = '';
+                    for(var i = 0; i<result.length;i++) {
                         output += result[i].permitId;
                         output+="\n"
 		    }
