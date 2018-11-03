@@ -35,9 +35,9 @@ app.post('/getName', function(request, response) {
 		  pass: password,
 		  sendImmediately: true
 		});
-		Request.end(function (response) {
+		Request.end(function (res) {
 		  console.log(response.body);
-		 response.send(JSON.stringify({
+		 res.send(JSON.stringify({
                         "fulfillmentText" : "The premit application ref is "
                   }));
 			
