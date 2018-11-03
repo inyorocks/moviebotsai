@@ -40,13 +40,9 @@ app.post('/getName', function(request, response) {
 			 const profile = JSON.parse(res.body);
 			console.log(profile);
 			var result = res.body.results;
-                    var output = '';
-                    for(var i = 0; i<result.length;i++) {
-                        output += result[i].permitId;
-                        output+="\n"
-		    }
+                   
 		 response.send(JSON.stringify({
-                        "fulfillmentText" : "The premit application ref is "+ output
+                        "fulfillmentText" : "The premit application ref is "+ result.length
                   }));
 			
 		});
