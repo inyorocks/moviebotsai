@@ -36,9 +36,11 @@ app.post('/getName', function(request, response) {
 		  sendImmediately: true
 		});
 		Request.end(function (res) {
-		  console.log(res.body);
+		  
+			 const profile = JSON.parse(res.body);
+			console.log(profile);
 		 response.send(JSON.stringify({
-                        "fulfillmentText" : "The premit application ref is "+ res.body.data[0].permitId
+                        "fulfillmentText" : "The premit application ref is "
                   }));
 			
 		});
