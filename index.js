@@ -37,8 +37,8 @@ app.post('/getName', function(request, response) {
 		});
 		Request.end(function (res) {
 		  
-			 const profile = JSON.parse(res.body);
-			console.log(profile);
+		
+			console.log(res.body);
 			var result = res.body.results;
                    
 		 response.send(JSON.stringify({
