@@ -37,7 +37,7 @@ app.post('/getName', function(request, response) {
 		});
 		Request.end(function (res) {
 		  console.log(res.body);
-		 res.send(JSON.stringify({
+		 response.send(JSON.stringify({
                         "fulfillmentText" : "The premit application ref is "
                   }));
 			
