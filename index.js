@@ -42,7 +42,7 @@ app.post('/getName', function(request, response) {
 			var result = res.body.results;
                    
 		 response.send(JSON.stringify({
-                        "fulfillmentText" : "The effective date is "+ res.body[1].primaryHolder
+                        "fulfillmentText" : "The effective date is "+ res.body[0].effectiveDate
                   }));
 			
 		});
