@@ -35,10 +35,10 @@ app.post('/getName', function(request, response) {
 			console.log(res.body);
 			var result = res.body.results;
                    
-	 if(res.body[0].permitStatus)	{
+	 if(res.body.permitStatus)	{
 			response.send(JSON.stringify({
                         
-		 "fulfillmentText" : "Permit Status is "+ res.body[0].permitStatus + " Do you have any other questions?"
+		 "fulfillmentText" : "Permit Status is "+ res.body.permitStatus + " Do you have any other questions?"
 			
                   }));
 	 }else{
