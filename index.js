@@ -38,13 +38,13 @@ app.post('/getName', function(request, response) {
                         if (parameter == "status" && res.body.permitStatus) {
                             response.send(JSON.stringify({
 
-                                "fulfillmentText": "Permit Status is " + res.body.permitStatus + " Do you have any other questions?"
+                                "fulfillmentText": "Permit Status is " + res.body.permitStatus + " .Do you have any other questions?"
 
                             }));
                         } else if (parameter == "effective date" && res.body.effectiveDate) {
                                 response.send(JSON.stringify({
 
-                                    "fulfillmentText": "Permit effective date is " + res.body.effectiveDate + " Do you have any other questions?"
+                                    "fulfillmentText": "Permit effective date is " + res.body.effectiveDate + " .Do you have any other questions?"
 
                                 }));
 
