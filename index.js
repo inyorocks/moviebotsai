@@ -14,7 +14,9 @@ var loginUrl="";
 app.post('/getName', function(request, response) { 
            
 	 var perm = request.body.queryResult.parameters['given-perm'];
+	 var parameter = request.body.queryResult.parameters['given-parameter'];
      	 console.log("2222:"+perm );
+	 console.log("3333:"+parameter );
 	 if(perm!== null && perm!==''){
 		 
             loginUrl = "https://ehpdev2.appiancloud.com/suite/webapi/SS_GetPerm?permitRef=";
