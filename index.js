@@ -42,17 +42,6 @@ app.post('/getName', function(request, response) {
 	 } 
 	
 	
-	var nameVal = request.body.queryResult.parameters['GIVEN_NAME'];
-     	    console.log("111111:"+nameVal );
-	    if(nameVal!== null && nameVal!==''){
-		 response.setHeader('Content-Type', 'application/json');
-                 response.send(JSON.stringify({
-                        "fulfillmentText" : "How can i help you1 " + nameVal
-                    }));
-		 
-	    }	 
-	
-		
   });	
          process.on('uncaughtException', function (err) {
        console.log(err);
