@@ -36,7 +36,7 @@ app.post('/getName', function(request, response) {
 	 if(res.body[0].effectiveDate)	{
 			response.send(JSON.stringify({
                         
-		 "fulfillmentText" : "The effective date is "+ res.body[0].status
+		 "fulfillmentText" : "The effective date is "+ res.body[0].permitStatus
 			
                   }));
 	 }else{
