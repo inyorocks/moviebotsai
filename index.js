@@ -33,7 +33,7 @@ app.post('/getName', function(request, response) {
 			console.log(res.body);
 			var result = res.body.results;
                    
-	 if(res.body[0].effectiveDate)	{
+	 if(res.body[0].permitStatus)	{
 			response.send(JSON.stringify({
                         
 		 "fulfillmentText" : "The effective date is "+ res.body[0].permitStatus
