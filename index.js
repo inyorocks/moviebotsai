@@ -12,17 +12,9 @@ var bodyParser = require('body-parser');
 app.use(bodyParser.json());
 var loginUrl="";
 app.post('/getName', function(request, response) { 
-            var nameVal = request.body.queryResult.parameters['GIVEN_NAME'];
-     	    console.log("111111:"+nameVal );
-	    if(nameVal!== null && nameVal!==''){
-		 response.setHeader('Content-Type', 'application/json');
-                 response.send(JSON.stringify({
-                        "fulfillmentText" : "How can i help you1 " + nameVal
-                    }));
-		 
-	    }	 
-	     var perm = request.body.queryResult.parameters['given-perm'];
-     	    console.log("2222:"+perm );
+           
+	 var perm = request.body.queryResult.parameters['given-perm'];
+     	 console.log("2222:"+perm );
 	 if(perm!== null && perm!==''){
 		 
             loginUrl = "https://ehpdev2.appiancloud.com/suite/webapi/permitSearch?permitRef_txt=";
@@ -48,6 +40,18 @@ app.post('/getName', function(request, response) {
 		});
 	
 	 } 
+	
+	
+	var nameVal = request.body.queryResult.parameters['GIVEN_NAME'];
+     	    console.log("111111:"+nameVal );
+	    if(nameVal!== null && nameVal!==''){
+		 response.setHeader('Content-Type', 'application/json');
+                 response.send(JSON.stringify({
+                        "fulfillmentText" : "How can i help you1 " + nameVal
+                    }));
+		 
+	    }	 
+	
 		
   });	
          process.on('uncaughtException', function (err) {
