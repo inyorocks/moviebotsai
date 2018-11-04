@@ -58,7 +58,7 @@ app.post('/getName', function(request, response) {
                                 } else {
                                     response.send(JSON.stringify({
 
-                                        "fulfillmentText": "Error has occured. Please email to connecthelp@des.gov.qld.au or call 1300Connect for further queries"
+                                        "fulfillmentText": "I dont have the information. Please email to connecthelp@des.gov.qld.au or call 1300Connect for further queries.Thanks"
 
                                     }));
                                 }
