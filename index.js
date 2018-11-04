@@ -42,7 +42,6 @@ app.post('/getName', function(request, response) {
 			
                   }));
 	 }else{
-		 
 		response.send(JSON.stringify({
                         
 		 "fulfillmentText" : "This is not a valid permit reference please reach over phone or email "
