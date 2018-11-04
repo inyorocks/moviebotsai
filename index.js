@@ -17,7 +17,7 @@ app.post('/getName', function(request, response) {
      	 console.log("2222:"+perm );
 	 if(perm!== null && perm!==''){
 		 
-            loginUrl = "https://ehpdev2.appiancloud.com/suite/webapi/permitSearch?permitRef_txt=";
+            loginUrl = "https://ehpdev2.appiancloud.com/suite/webapi/SS_GetPerm?permitRef=";
 	    loginUrl = loginUrl + perm;
 	    var username = 'sai.ramesh@ehp.qld.gov.au';
             var password = 'Hanuman.01';
@@ -36,7 +36,7 @@ app.post('/getName', function(request, response) {
 	 if(res.body[0].effectiveDate)	{
 			response.send(JSON.stringify({
                         
-		 "fulfillmentText" : "The effective date is "+ res.body[0].effectiveDate
+		 "fulfillmentText" : "The effective date is "+ res.body[0].status
 			
                   }));
 	 }else{
