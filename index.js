@@ -34,7 +34,12 @@ app.post('/getName', function(request, response) {
 			var result = res.body.results;
                    
 		 response.send(JSON.stringify({
-                        "fulfillmentText" : "The effective date is "+ res.body[0].effectiveDate
+                        
+			 if(res.body[0].effectiveDate){
+			 "fulfillmentText" : "The effective date is "+ res.body[0].effectiveDate
+			 }else{
+			 "fulfillmentText" : "I am having some trouble please reach us over phone or email"
+		 }
                   }));
 			
 		});
