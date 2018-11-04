@@ -35,7 +35,7 @@ app.post('/getName', function(request, response) {
 			console.log(res.body);
 			var result = res.body.results;
                    
-	 if(res.body.permitStatus)	{
+	 if(parameter == status && res.body.permitStatus)	{
 			response.send(JSON.stringify({
                         
 		 "fulfillmentText" : "Permit Status is "+ res.body.permitStatus + " Do you have any other questions?"
@@ -44,7 +44,7 @@ app.post('/getName', function(request, response) {
 	 }else{
 		response.send(JSON.stringify({
                         
-		 "fulfillmentText" : "This is not a valid permit reference please reach over phone or email "
+		 "fulfillmentText" : "This doesnot seems to be a valid permit reference. Please email to connecthelp@des.gov.qld.au or call 1300Connect for further query"
 			
                   }));
 	 }
