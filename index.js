@@ -33,11 +33,20 @@ app.post('/getName', function(request, response) {
 			console.log(res.body);
 			var result = res.body.results;
                    
-		 response.send(JSON.stringify({
+	 if(res.body[0].effectiveDate)	{
+			response.send(JSON.stringify({
                         
 		 "fulfillmentText" : "The effective date is "+ res.body[0].effectiveDate
 			
                   }));
+	 }else{
+		 
+		response.send(JSON.stringify({
+                        
+		 "fulfillmentText" : "There is a trouble "
+			
+                  }));
+	 }
 			
 		});
 	
