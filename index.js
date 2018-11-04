@@ -35,16 +35,33 @@ app.post('/getName', function(request, response) {
 			console.log(res.body);
 			var result = res.body.results;
                    
-	 if(parameter == status && res.body.permitStatus)	{
+	 if(parameter == "status" && res.body.permitStatus)	{
 			response.send(JSON.stringify({
                         
 		 "fulfillmentText" : "Permit Status is "+ res.body.permitStatus + " Do you have any other questions?"
 			
                   }));
-	 }else{
+	 }else if{
+	      (parameter == "effective date" && res.body.effectiveDate)	{
+			response.send(JSON.stringify({
+                        
+		 "fulfillmentText" : "Permit effective date is "+ res.body.effectiveDate + " Do you have any other questions?"
+			
+                  }));
+	 
+		}else if{
+	      (parameter == "anniversary date" && res.body.anniversaryDate)	{
+			response.send(JSON.stringify({
+                        
+		 "fulfillmentText" : "Permit anniversary date is "+ res.body.anniversaryDate + " Do you have any other questions?"
+			
+                  }));
+	 
+		}
+		 else{
 		response.send(JSON.stringify({
                         
-		 "fulfillmentText" : "This doesnot seems to be a valid permit reference. Please email to connecthelp@des.gov.qld.au or call 1300Connect for further query"
+		 "fulfillmentText" : "Error has occured. Please email to connecthelp@des.gov.qld.au or call 1300Connect for further queries"
 			
                   }));
 	 }
